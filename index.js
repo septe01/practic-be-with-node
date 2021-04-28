@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 require("express-group-routes");
 // use express in variable
 const app = express();
-//cors
+//handle cors
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
@@ -27,12 +27,6 @@ app.group("/api/v1", (routes) => {
   routes.get("/", LoginController.index);
 });
 
-// app.group("/api/v1", (router) => {
-//   //using group routes
-//   router.get("/login", (req, res) => {
-//     res.send("hallo");
-//   });
-// });
 
 // create the homepage route
 app.get("/", (req, res) => {
